@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kafka
+  namespace: urban-sensors
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kafka
+  template:
+    metadata:
+      labels:
+        app: kafka
+    spec:
+      enableServiceLinks: false
+      containers:
+        - name: kafka
+          image: apache/kafka:3.9.0
+          ports:
+            - containerPort: 9092
+          envFrom:
+            - configMapRef:
+                name: kafka-config
