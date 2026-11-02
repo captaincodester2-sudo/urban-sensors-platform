@@ -5,7 +5,7 @@ metadata:
   namespace: urban-sensors
 data:
   KAFKA_BOOTSTRAP_SERVERS: "kafka:9092"
-  KAFKA_TOPIC: "urban-sensors"
+  KAFKA_TOPIC: "urban_sensors"
   WINDOW_DURATION: "1 minute"
   STARTING_OFFSETS: "latest"
   CHECKPOINT_DIR: "/tmp/checkpoint"
